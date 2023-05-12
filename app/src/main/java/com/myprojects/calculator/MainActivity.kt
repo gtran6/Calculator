@@ -8,25 +8,24 @@ import net.objecthunter.exp4j.ExpressionBuilder
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
-    private var isCalculating = false
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
         binding.apply {
+
             ac.setOnClickListener {
-                if (isCalculating) {
-                    ac.text = "C"
-                    val clearTxt = inputText.length()
-                    if (clearTxt > 0)
-                        inputText.text = inputText.text.substring(0 , clearTxt -1)
-                } else {
-                    ac.text = "AC"
-                    inputText.text = ""
-                    total.text = ""
-                }
+                inputText.text = ""
+                total.text = ""
             }
+
+            clear.setOnClickListener {
+                val clearTxt = inputText.length()
+                if (clearTxt > 0)
+                    inputText.text = inputText.text.substring(0 , clearTxt -1)
+            }
+
             zero.setOnClickListener { inputText.append("0") }
 
             one.setOnClickListener { inputText.append("1") }
@@ -62,6 +61,7 @@ class MainActivity : AppCompatActivity() {
             endBracket.setOnClickListener { inputText.append(")") }
 
             equals.setOnClickListener{
+
                 val expression = ExpressionBuilder(inputText.text.toString()).build()
                 val result = expression.evaluate()
                 val longResult = result.toLong()
@@ -70,7 +70,7 @@ class MainActivity : AppCompatActivity() {
 
                     total.text = longResult.toString()
 
-                }else{
+                } else{
                     total.text = result.toString()
                 }
             }

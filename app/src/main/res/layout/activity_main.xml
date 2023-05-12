@@ -39,14 +39,29 @@
         android:id="@+id/total"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/bottom"
+        android:layout_above="@+id/clear"
         android:layout_marginStart="45dp"
         android:layout_marginTop="45dp"
         android:layout_marginEnd="45dp"
-        android:layout_marginBottom="45dp"
         android:gravity="right"
         android:textColor="@color/yellow"
         android:textSize="82sp" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/clear"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_above="@id/bottom"
+        android:layout_marginEnd="32dp"
+        android:layout_marginBottom="10dp"
+        android:layout_alignParentEnd="true"
+        android:text="C"
+        android:textColor="?attr/colorPrimaryVariant"
+        android:background="@drawable/btn_round_bg"
+        android:backgroundTint="?attr/buttonTint"
+        android:textSize="25sp">
+
+    </androidx.appcompat.widget.AppCompatButton>
 
     <LinearLayout
         android:id="@+id/bottom"
@@ -73,8 +88,8 @@
                 android:text="@string/ac"
                 android:layout_marginEnd="22dp"
                 android:textColor="@color/yellow"
-                android:background="@drawable/btn_round"
-                android:backgroundTint="@color/grey"
+                android:background="@drawable/btn_round_bg"
+                android:backgroundTint="?attr/color"
                 android:textSize="25sp" />
 
             <androidx.appcompat.widget.AppCompatButton
@@ -86,7 +101,7 @@
                 android:layout_marginEnd="22dp"
                 android:background="@drawable/btn_round"
                 android:backgroundTint="@color/grey"
-                android:textSize="25sp"/>
+                android:textSize="27sp"/>
 
 
             <androidx.appcompat.widget.AppCompatButton
@@ -98,7 +113,7 @@
                 android:textColor="?attr/colorOnSecondary"
                 android:background="@drawable/btn_round"
                 android:backgroundTint="@color/grey"
-                android:textSize="25sp"/>
+                android:textSize="27sp"/>
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/divide"
@@ -128,7 +143,7 @@
                 android:textColor="?attr/colorOnSecondary"
                 android:background="@drawable/btn_round"
                 android:backgroundTint="@color/grey"
-                android:textSize="25sp"/>
+                android:textSize="27sp"/>
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/eight"
@@ -139,7 +154,7 @@
                 android:textColor="?attr/colorOnSecondary"
                 android:background="@drawable/btn_round"
                 android:backgroundTint="@color/grey"
-                android:textSize="25sp"/>
+                android:textSize="27sp"/>
 
 
             <androidx.appcompat.widget.AppCompatButton
@@ -151,7 +166,7 @@
                 android:textColor="?attr/colorOnSecondary"
                 android:background="@drawable/btn_round"
                 android:backgroundTint="@color/grey"
-                android:textSize="25sp"/>
+                android:textSize="27sp"/>
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/multiply"
@@ -181,7 +196,7 @@
                 android:textColor="?attr/colorOnSecondary"
                 android:background="@drawable/btn_round"
                 android:backgroundTint="@color/grey"
-                android:textSize="25sp"/>
+                android:textSize="27sp"/>
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/five"
@@ -192,7 +207,7 @@
                 android:textColor="?attr/colorOnSecondary"
                 android:background="@drawable/btn_round"
                 android:backgroundTint="@color/grey"
-                android:textSize="25sp"/>
+                android:textSize="27sp"/>
 
 
             <androidx.appcompat.widget.AppCompatButton
@@ -204,7 +219,7 @@
                 android:textColor="?attr/colorOnSecondary"
                 android:background="@drawable/btn_round"
                 android:backgroundTint="@color/grey"
-                android:textSize="25sp"/>
+                android:textSize="27sp"/>
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/minus"
@@ -235,7 +250,7 @@
                 android:textColor="?attr/colorOnSecondary"
                 android:background="@drawable/btn_round"
                 android:backgroundTint="@color/grey"
-                android:textSize="25sp"/>
+                android:textSize="27sp"/>
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/two"
@@ -246,7 +261,7 @@
                 android:textColor="?attr/colorOnSecondary"
                 android:background="@drawable/btn_round"
                 android:backgroundTint="@color/grey"
-                android:textSize="25sp"/>
+                android:textSize="27sp"/>
 
 
             <androidx.appcompat.widget.AppCompatButton
@@ -258,7 +273,7 @@
                 android:textColor="?attr/colorOnSecondary"
                 android:background="@drawable/btn_round"
                 android:backgroundTint="@color/grey"
-                android:textSize="25sp"/>
+                android:textSize="27sp"/>
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/plus"
@@ -288,7 +303,7 @@
                 android:textColor="?attr/colorOnSecondary"
                 android:background="@drawable/btn_round"
                 android:backgroundTint="@color/grey"
-                android:textSize="25sp"/>
+                android:textSize="27sp"/>
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/dot"
@@ -299,7 +314,7 @@
                 android:textColor="?attr/colorOnSecondary"
                 android:background="@drawable/btn_round"
                 android:backgroundTint="@color/grey"
-                android:textSize="25sp"/>
+                android:textSize="27sp"/>
 
 
             <androidx.appcompat.widget.AppCompatButton
@@ -307,9 +322,9 @@
                 android:layout_width="162dp"
                 android:layout_height="70dp"
                 android:text="="
-                android:textColor="@color/yellow"
+                android:textColor="?attr/colorPrimaryVariant"
                 android:background="@drawable/btn_round_bg"
-                android:backgroundTint="?attr/color"
+                android:backgroundTint="?attr/buttonTint"
                 android:textSize="32sp"
                 android:textAlignment="center"/>
 
