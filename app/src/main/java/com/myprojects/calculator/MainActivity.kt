@@ -4,6 +4,8 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatDelegate
+import androidx.recyclerview.widget.DividerItemDecoration
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.myprojects.calculator.databinding.ActivityMainBinding
 import net.objecthunter.exp4j.ExpressionBuilder
 
@@ -15,6 +17,14 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        // Set up the RecyclerView
+        val calculationsRecyclerView = binding.rcv
+        calculationsRecyclerView.layoutManager = LinearLayoutManager(this)
+        calculationsRecyclerView.addItemDecoration(DividerItemDecoration(this, LinearLayoutManager.VERTICAL))
+        val adapter = CalculationAdapter(viewModel.calculationHistory)
+        calculationsRecyclerView.adapter = adapter
+
+
         binding.apply {
             inputText.text = viewModel.inputText
             total.text = viewModel.totalText
@@ -25,6 +35,12 @@ class MainActivity : AppCompatActivity() {
             ac.setOnClickListener {
                 inputText.text = ""
                 total.text = ""
+                viewModel.calculationHistory.add(
+                    ViewModel.Calculation(
+                        inputText.text.toString(),
+                        total.text.toString()
+                    )
+                )
             }
 
             clear.setOnClickListener {
@@ -81,13 +97,9 @@ class MainActivity : AppCompatActivity() {
                     total.text = result.toString()
                 }
 
-                viewModel.calculationHistory.add(ViewModel.Calculation(
-                    binding.inputText.text.toString(),
-                    binding.total.text.toString()
-                ))
-
                 viewModel.inputText = binding.inputText.text.toString()
                 viewModel.totalText = binding.total.text.toString()
+
             }
 
             btnSwitch.setOnClickListener {
