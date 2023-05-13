@@ -77,9 +77,15 @@ class MainActivity : AppCompatActivity() {
 
                     total.text = longResult.toString()
 
-                } else{
+                } else {
                     total.text = result.toString()
                 }
+
+                viewModel.calculationHistory.add(ViewModel.Calculation(
+                    binding.inputText.text.toString(),
+                    binding.total.text.toString()
+                ))
+
                 viewModel.inputText = binding.inputText.text.toString()
                 viewModel.totalText = binding.total.text.toString()
             }

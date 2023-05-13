@@ -23,29 +23,45 @@
 
     </com.google.android.material.switchmaterial.SwitchMaterial>
 
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="end"
+        android:layout_margin="32dp"
+        android:layout_above="@id/inputText">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rcv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:listitem="@layout/item_calculation"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"/>
+
+    </RelativeLayout>
+
     <TextView
         android:id="@+id/inputText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_above="@id/total"
-        android:layout_marginStart="50dp"
-        android:layout_marginEnd="60dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp"
         android:layout_marginBottom="-38dp"
         android:gravity="right"
         android:textColor="@color/yellow"
-        android:textSize="42sp" />
+        android:textSize="32sp" />
 
     <TextView
         android:id="@+id/total"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_above="@+id/clear"
-        android:layout_marginStart="45dp"
+        android:layout_marginStart="32dp"
         android:layout_marginTop="45dp"
-        android:layout_marginEnd="45dp"
+        android:layout_marginEnd="32dp"
         android:gravity="right"
         android:textColor="@color/yellow"
-        android:textSize="82sp" />
+        android:textSize="62sp" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/clear"
@@ -70,7 +86,7 @@
         android:layout_alignParentBottom="true"
         android:layout_marginRight="10dp"
         android:layout_marginLeft="10dp"
-        android:layout_marginBottom="60dp"
+        android:layout_marginBottom="40dp"
         android:orientation="vertical"
         android:background="?attr/colorPrimary">
 
