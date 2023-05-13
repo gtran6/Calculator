@@ -2,16 +2,23 @@ package com.myprojects.calculator
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatDelegate
 import com.myprojects.calculator.databinding.ActivityMainBinding
 import net.objecthunter.exp4j.ExpressionBuilder
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
+    private val viewModel: ViewModel by viewModels()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        binding.apply {
+            inputText.text = viewModel.inputText
+            total.text = viewModel.totalText
+        }
 
         binding.apply {
 
@@ -73,6 +80,8 @@ class MainActivity : AppCompatActivity() {
                 } else{
                     total.text = result.toString()
                 }
+                viewModel.inputText = binding.inputText.text.toString()
+                viewModel.totalText = binding.total.text.toString()
             }
 
             btnSwitch.setOnClickListener {
@@ -81,6 +90,7 @@ class MainActivity : AppCompatActivity() {
                 } else {
                     AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
                 }
+                recreate()
             }
         }
     }

@@ -101,7 +101,7 @@
                 android:layout_marginEnd="22dp"
                 android:background="@drawable/btn_round"
                 android:backgroundTint="@color/grey"
-                android:textSize="27sp"/>
+                android:textSize="30sp"/>
 
 
             <androidx.appcompat.widget.AppCompatButton
@@ -113,7 +113,7 @@
                 android:textColor="?attr/colorOnSecondary"
                 android:background="@drawable/btn_round"
                 android:backgroundTint="@color/grey"
-                android:textSize="27sp"/>
+                android:textSize="30sp"/>
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/divide"

@@ -20,6 +20,7 @@ android {
     buildTypes {
         release {
             minifyEnabled true
+            shrinkResources true
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
@@ -50,4 +51,7 @@ dependencies {
     implementation 'com.airbnb.android:lottie:5.2.0'
 
     implementation 'net.objecthunter:exp4j:0.4.5'
+
+    //LifeCycle
+    implementation 'androidx.activity:activity-ktx:1.6.1'
 }
